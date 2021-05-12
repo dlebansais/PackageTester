@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackageTester", "PackageTester\PackageTester.csproj", "{72E4E55D-77F4-46E9-866F-860E8BB749A0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7B698A13-2F3F-46A0-BD3C-0BE4A6A90297} = {7B698A13-2F3F-46A0-BD3C-0BE4A6A90297}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6C389828-EED5-4F22-BC2F-2A891411F484}"
 	ProjectSection(SolutionItems) = preProject

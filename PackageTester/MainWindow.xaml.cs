@@ -1,6 +1,9 @@
 ﻿namespace PackageTester
 {
+    using System.Globalization;
     using System.Windows;
+    using System.Windows.Data;
+    using CustomControls;
 
     /// <summary>
     /// The window class.
@@ -15,5 +18,10 @@
             InitializeComponent();
             DataContext = this;
         }
+
+        /// <summary>
+        /// Gets a value indicating whether the window should be hidden.
+        /// </summary>
+        public bool HideMe { get; } = false;
     }
 }

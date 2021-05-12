@@ -3,10 +3,27 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PackageTester"
+        xmlns:conv="clr-namespace:Converters;assembly=XamlConverterLibrary"
+        xmlns:ctrl="CustomControlsLibrary"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Window.Resources>
+        <conv:BooleanToObjectConverter x:Key="convBooleanToObject"/>
+        <CompositeCollection x:Key="VisibleCollapsed">
+            <Visibility>Visible</Visibility>
+            <Visibility>Collapsed</Visibility>
+        </CompositeCollection>
+    </Window.Resources>
+    <Grid Background="LightBlue" Visibility="{Binding HideMe, Converter={StaticResource convBooleanToObject}, ConverterParameter={StaticResource VisibleCollapsed}}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ctrl:EditableTextBlock Grid.Row="0" Text="test"/>
+        <ctrl:EnumRadioButton Grid.Row="1"/>
+        <ctrl:EnumRadioButton Grid.Row="2"/>
+        <ctrl:EnumRadioButton Grid.Row="3"/>
     </Grid>
 </Window>

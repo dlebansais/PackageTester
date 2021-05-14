@@ -15,8 +15,8 @@
     <Product />
     <Description>Installer for CAcert certificates</Description>
     <Copyright>Copyright © David Le Bansais 2019</Copyright>
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
-    <FileVersion>1.0.0.2</FileVersion>
+    <AssemblyVersion>1.0.0.4</AssemblyVersion>
+    <FileVersion>1.0.0.4</FileVersion>
     <RepositoryUrl>https://github.com/dlebansais/PackageTester</RepositoryUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -35,10 +35,20 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="XamlConverterLibrary-Debug" Version="1.0.5" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
-    <PackageReference Include="XamlConverterLibrary" Version="1.0.5" Condition="'$(Configuration)|$(Platform)'!='Debug|x64'" />
+    <PackageReference Include="Contracts-Debug" Version="1.0.12" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <PackageReference Include="Contracts" Version="1.0.12" Condition="'$(Configuration)|$(Platform)'!='Debug|x64'" />
     <PackageReference Include="Custom-Controls-Library-Debug" Version="1.0.5" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
     <PackageReference Include="Custom-Controls-Library" Version="1.0.5" Condition="'$(Configuration)|$(Platform)'!='Debug|x64'" />
+    <PackageReference Include="Easly-Number-Debug" Version="1.2.3" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <PackageReference Include="Easly-Number" Version="1.2.3" Condition="'$(Configuration)|$(Platform)'!='Debug|x64'" />
+    <PackageReference Include="Easly-Language-Debug" Version="1.0.5" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <PackageReference Include="Easly-Language" Version="1.0.5" Condition="'$(Configuration)|$(Platform)'!='Debug|x64'" />
+    <PackageReference Include="MpfrDotNet-Debug" Version="1.0.8" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <PackageReference Include="MpfrDotNet" Version="1.0.8" Condition="'$(Configuration)|$(Platform)'!='Debug|x64'" />
+    <PackageReference Include="PolySerializer-Debug" Version="1.2.8" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <PackageReference Include="PolySerializer" Version="1.2.8" Condition="'$(Configuration)|$(Platform)'!='Debug|x64'" />
+    <PackageReference Include="XamlConverterLibrary-Debug" Version="1.0.5" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <PackageReference Include="XamlConverterLibrary" Version="1.0.5" Condition="'$(Configuration)|$(Platform)'!='Debug|x64'" />
   </ItemGroup>
 
   <Target Name="_ResolveCopyLocalNuGetPackagePdbsAndXml" Condition="$(CopyLocalLockFileAssemblies) == true" AfterTargets="ResolveReferences">

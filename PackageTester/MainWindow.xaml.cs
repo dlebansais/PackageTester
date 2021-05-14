@@ -1,9 +1,11 @@
 ﻿namespace PackageTester
 {
-    using System.Globalization;
+    using System.IO;
     using System.Windows;
-    using System.Windows.Data;
-    using CustomControls;
+    using Contracts;
+    using Easly;
+    using EaslyNumber;
+    using PolySerializer;
 
     /// <summary>
     /// The window class.
@@ -17,6 +19,19 @@
         {
             InitializeComponent();
             DataContext = this;
+
+            Contract.RequireNotNull(Name, out string WindowName);
+            MpfrDotNet.mpfr_t HugeDouble = new();
+            string ValueString = HugeDouble.ToString();
+            Number N = Number.Zero;
+            ValueString = N.ToString();
+
+            Serializer NewSerializer = new Serializer();
+            MemoryStream Stream = new MemoryStream();
+            NewSerializer.Serialize(Stream, ValueString);
+
+            System.Reflection.PropertyInfo Info = typeof(MainWindow).GetProperty("Name")!;
+            PropertyEntity NewE = new(Info);
         }
 
         /// <summary>
